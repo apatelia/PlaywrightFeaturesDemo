@@ -4,6 +4,7 @@ node_modules/
 /playwright/.cache/
 /artifacts/
 /axe-reports/
+/lighthouse-reports/
 
 # File manager history file
 .directory

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "A demo project to show off  Playwright's capabilities",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "serve ./static-website"
   },
@@ -10,12 +11,14 @@
   "author": "Arpan Patelia",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.39.0",
-    "@types/node": "^22.2.0"
+    "@playwright/test": "^1.49.0",
+    "@types/node": "^22.10.0",
+    "get-port": "^7.1.0",
+    "playwright-lighthouse": "^4.0.0"
   },
   "dependencies": {
-    "@axe-core/playwright": "^4.7.3",
-    "axe-html-reporter": "^2.2.3",
-    "serve": "^14.2.0"
+    "@axe-core/playwright": "^4.10.1",
+    "axe-html-reporter": "^2.2.11",
+    "serve": "^14.2.4"
   }
 }
