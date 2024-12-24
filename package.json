@@ -11,8 +11,8 @@
   "author": "Arpan Patelia",
   "license": "ISC",
   "devDependencies": {
-    "@playwright/test": "^1.49.0",
-    "@types/node": "^22.10.0",
+    "@playwright/test": "^1.49.1",
+    "@types/node": "^22.10.2",
     "get-port": "^7.1.0",
     "playwright-lighthouse": "^4.0.0"
   },

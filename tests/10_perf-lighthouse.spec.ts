@@ -1,5 +1,5 @@
 import { test } from "@playwright/test";
-import getPort from "get-port"
+import getPort from "get-port";
 import { playAudit } from "playwright-lighthouse";
 
 const pagesToTest = [
@@ -24,11 +24,11 @@ const pagesToTest = [
 const MOBILE_SETTINGS = {
   formFactor: "mobile",
   screenEmulation: {
-  mobile: true,
-  width: 412,
-  height: 823,
-  deviceScaleFactor: 1.75,
-  disabled: false,
+    mobile: true,
+    width: 412,
+    height: 823,
+    deviceScaleFactor: 1.75,
+    disabled: false,
   },
   emulatedUserAgent: 'Mozilla/5.0 (Linux; Android 11; moto g power (2022)) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/119.0.0.0 Mobile Safari/537.36',
 };
@@ -62,30 +62,30 @@ test.describe("Lighthouse performance tests", {
     const lighthouseConfig = {
       extends: "lighthouse:default",
       settings: deviceSettings,
-    }
-    
+    };
+
     test(`Check performance for ${url}`, async ({ playwright }) => {
       const port = await getPort();
 
       const browser = await playwright.chromium.launch({
-        args: [ `--remote-debugging-port=${port}`],
+        args: [ `--remote-debugging-port=${port}` ],
         headless: true
       });
-      
+
       const page = await browser.newPage();
       await page.goto(url);
-      
+
       const results = await playAudit({
         page: page,
         port: port,
         disableLogs: true,
         config: lighthouseConfig,
         thresholds: {
-            performance: 70,
-            accessibility: 80,
-            "best-practices": 80,
-            seo: 75
-          },
+          performance: 70,
+          accessibility: 80,
+          "best-practices": 80,
+          seo: 75
+        },
         reports: {
           formats: { html: true },
           name: `${reportName}--${new Date().getTime()}`,
